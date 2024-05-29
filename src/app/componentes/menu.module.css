@@ -1,0 +1,28 @@
+.cabecalho {
+    display: flex;
+    width: 100%;
+    background-color:#fff;
+    z-index: 1;
+    top: 0;
+    box-shadow: 0 10px 10px rgb(181, 181, 181);
+    align-items: center;
+    position: fixed;
+}
+
+.rodape {
+    background-color: #000000;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 3%;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.text {
+    list-style-type: none;
+    width: 100%;
+}
