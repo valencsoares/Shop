@@ -15,7 +15,8 @@
 }
 
 .card {
-  width: 30%;
+  width: 30rem;
+  height: 30rem;
   text-align: center;
   margin: 3% 1% 3% 1%;
   border: 1px solid #ffffff;
@@ -28,6 +29,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.texto {
+  white-space: nowrap;
+  overflow: auto;
+}
+
 .html {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
