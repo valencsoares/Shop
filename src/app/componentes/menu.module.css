@@ -1,12 +1,14 @@
 .cabecalho {
-    display: flex;
+    display: inline-flex;
     width: 100%;
+    height: 10%;
     background-color:#fff;
     z-index: 1;
     top: 0;
     box-shadow: 0 10px 10px rgb(181, 181, 181);
     align-items: center;
     position: fixed;
+    justify-content: space-between;
 }
 
 .rodape {
