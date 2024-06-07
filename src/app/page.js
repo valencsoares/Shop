@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Main from "./componentes/Main";
 import style from "./page.module.css";
 
 export default async function Home() {
