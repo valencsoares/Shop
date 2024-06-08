@@ -41,23 +41,40 @@
     font-size: 85%;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1%;
 }
 
-.text {
+.lista {
     list-style-type: none;
     width: 100%;
-    display: flex;
     justify-content: space-between;
     list-style: none;
     align-items: center;
+    display: flex;
+}
+
+.ig::before, .face::before, .yt::before, .twt::before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-size: contain;
+    margin-bottom: -0.2rem;
+    margin-right: 0.3rem;
 }
 
 .ig::before {
-    content: '';
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-    background-size: contain;
-    background-image: url("https://media.istockphoto.com/id/1278996249/pt/vetorial/camera-icon-simple-style-isolated-vector-illustration-on-white-background.jpg?s=612x612&w=0&k=20&c=VGibNPi-bCWhtXr42Wn6h90baRqbfiOXzkUb6YCvY0A=");
-    margin-right: 5px;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/4922/4922972.png")
+}
+
+.face::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/128/2175/2175193.png");
+}
+
+.yt::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/128/152/152810.png");
+}
+
+.twt::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/128/1384/1384017.png");
 }
