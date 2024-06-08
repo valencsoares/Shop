@@ -11,10 +11,9 @@ export default function Header(){
                 <p>Encontre tudo que você precisa em um só lugar!</p>
             </div>
             <div>
-                <button>Adicionar produto</button>
-            </div>
             <div>
                 <Image width={35} height={35} style={{ marginRight: '2rem' }} src={'https://media.istockphoto.com/id/1206806317/pt/vetorial/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=cl3NPzmnu0pRmaRGndYIejbHGe-atORf0JDjzmhX8Z8='} />
+                <button className={styles.botao}>Adicionar produto</button>
             </div>
         </header>
     )
