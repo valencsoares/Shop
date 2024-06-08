@@ -93,4 +93,8 @@
     background-color: #7700b3; 
 }
 
+.botao2, .botao3 {
+    background-color: #fff; 
+    border: none; 
+    cursor: pointer;
 }
