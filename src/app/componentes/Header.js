@@ -8,7 +8,7 @@ export default function Header(){
                 <Image width={55} height={55} style={{ marginLeft: '2rem' }} src={'https://media.istockphoto.com/id/1423019666/pt/vetorial/reading-e-book-pixel-perfect-gradient-linear-ui-icon.jpg?s=612x612&w=0&k=20&c=myq2n2LjW78sV61KfeuOKGpMddPZxNKb7i8CpoQXWlo='} />
             </div>
             <div>
-                <p>Venha para a nossa loja, aqui você encontrará tudo que precisa!</p>
+                <p>Encontre tudo que você precisa em um só lugar!</p>
             </div>
             <div>
                 <button>Adicionar produto</button>
