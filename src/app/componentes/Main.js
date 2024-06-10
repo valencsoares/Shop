@@ -1,7 +1,7 @@
 import style from "./menu.module.css";
 import Image from "next/image";
 
-export default async function Footer() {
+export default async function Main() {
     const resposta = await fetch("https://fakestoreapi.com/products", {nex:{revalidate: 1}});
     const products = await resposta.json();
 

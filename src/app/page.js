@@ -1,5 +1,3 @@
-import Image from "next/image";
-import style from "./page.module.css";
 import Main from "./componentes/Main"
 
 export default function Home() {
