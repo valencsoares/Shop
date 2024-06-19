@@ -10,12 +10,14 @@ export default async function Main() {
             <div className={style.container}>
                 {products.map((prod) =>
                     <div className={style.card}>
-                        <p>Name: {prod.title} </p>
-                        <p>Price: {prod.price}</p>
-                        <p className={style.texto}>Description: {prod.description}</p>
-                        <p>Category: {prod.category}</p>
-                        <p>Rating: {prod.rating.count}</p>
+                        <p> {prod.title} </p>               
                         <Image width={200} height={200} src={prod.image} />
+                        <p>US{prod.price}</p>
+                        <p className={style.texto}>Description: {prod.description}</p>
+                        <ul className={style.listaCard}>
+                            <li>Category: {prod.category}</li>
+                            <li className={style.liRating}>Rating: {prod.rating.count}</li>
+                        </ul>
                     </div>)}
             </div>
         </main>
