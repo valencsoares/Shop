@@ -1,9 +1,22 @@
+"use client" /* você defini que ele está do lado do cliente. quando é do lado do serve, usa use server */
+/* quando é assyncrono não consegue trabalhar com manipulação de dados se estiver dentro de um componente, ou seja, não trabalha com estados */
+import { useEffect, useState } from "react";
 import style from "./menu.module.css";
 import Image from "next/image";
 
-export default async function Main() {
-    const resposta = await fetch("https://fakestoreapi.com/products", {nex:{revalidate: 1}});
-    const products = await resposta.json();
+export default function Main() {
+    const [listProduct, setListProduct] = useState([]);
+    
+    useEffect(() => {
+        const getProduct = async() => {
+            const resposta = await fetch("https://fakestoreapi.com/products", {nex:{revalidate: 1}});
+            const products = await resposta.json();
+            setListProduct(products);
+        }
+        getProduct();
+    }, []); /* o ", []" diz que será disparado apenas quando a lista estiver vazia */ 
+    /* td vez q a minha lista for modificada ele vai buscar através do fecth a informação que será salva na lista */
+
 
     return (
         <main style={{ marginTop: "5%"}}>
