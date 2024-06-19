@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import style from "./menu.module.css";
 import Image from "next/image";
+import Spinner from "./Spinner.js"
 
 export default function Main() {
     const [listProduct, setListProduct] = useState([]);
@@ -34,6 +35,9 @@ export default function Main() {
         setListProduct(listAux)
     }
 
+    if (listProduct[0] == null){
+        return <Spinner/>
+    }
 
     return (
         <>
