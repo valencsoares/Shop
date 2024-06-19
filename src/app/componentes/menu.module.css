@@ -108,3 +108,7 @@
     border: none; 
     cursor: pointer;
 }
+
+.filters {
+    margin-top: 5%;
+}

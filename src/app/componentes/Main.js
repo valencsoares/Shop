@@ -17,11 +17,38 @@ export default function Main() {
     }, []); /* o ", []" diz que será disparado apenas quando a lista estiver vazia */ 
     /* td vez q a minha lista for modificada ele vai buscar através do fecth a informação que será salva na lista */
 
+    const orderAz = () => {
+        const listAux = [...listProduct].sort((a, b) => a.title.localeCompare(b.title));
+        setListProduct(listAux)
+    }
+    const orderZa = () => {
+        const listAux = [...listProduct].sort((a, b) => b.title.localeCompare(a.title));
+        setListProduct(listAux)
+    }
+    const priceCrescent = () => {
+        const listAux = [...listProduct].sort((a, b) => a.price - b.price);
+        setListProduct(listAux)
+    }
+    const priceReverse = () => {
+        const listAux = [...listProduct].sort((a, b) => b.price - a.price);
+        setListProduct(listAux)
+    }
+
 
     return (
-        <main style={{ marginTop: "5%"}}>
+        <>
+        <div className={style.filters}>
+            <div>
+                <button onClick={orderAz}> Az </button>
+                <button onClick={orderZa}> Za </button>
+                <button onClick={priceCrescent}> Crescent price </button>
+                <button onClick={priceReverse}> Decrescent price </button>
+            </div>
+        </div>
+
+        <main>
             <div className={style.container}>
-                {products.map((prod) =>
+                {listProduct.map((prod) => /* mapeando o estado */
                     <div className={style.card}>
                         <p> {prod.title} </p>               
                         <Image width={200} height={200} src={prod.image} />
@@ -34,5 +61,6 @@ export default function Main() {
                     </div>)}
             </div>
         </main>
+        </>
     );
 }
