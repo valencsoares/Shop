@@ -4,15 +4,25 @@ import { useEffect, useState } from "react";
 import style from "./menu.module.css";
 import Image from "next/image";
 import Spinner from "./Spinner.js"
+import ErrorFetch from "./ErrorFetch";
 
 export default function Main() {
     const [listProduct, setListProduct] = useState([]);
+    const [listComplete, setListComplete] = useState([])
+    const [textSearch, setTextSearch] = useState("")
+    const [isError, setIsError] = useState(false)
     
     useEffect(() => {
         const getProduct = async() => {
-            const resposta = await fetch("https://fakestoreapi.com/products", {nex:{revalidate: 1}});
-            const products = await resposta.json();
-            setListProduct(products);
+            try{
+                const resposta = await fetch("https://fakestoreapi.com/products", {nex:{revalidate: 1}});
+                const products = await resposta.json();
+                setListProduct(products);
+                setListComplete(products);
+            } catch {
+                setIsError(true)
+                
+            }
         }
         getProduct();
     }, []); /* o ", []" diz que será disparado apenas quando a lista estiver vazia */ 
@@ -35,7 +45,23 @@ export default function Main() {
         setListProduct(listAux)
     }
 
-    if (listProduct[0] == null){
+    const search = (text) => {
+        setTextSearch(text)
+
+        if(text == ""){
+            setListProduct(listComplete)
+            return
+        }
+        const newList = listProduct.filter((product) => 
+            product.title.toUpperCase().trim().includes(textSearch.toUpperCase().trim())
+        )
+        setListProduct(newList)
+    }
+    if (isError == true){
+        return <ErrorFetch/>
+    }
+
+    if (listComplete[0] == null){
         return <Spinner/>
     }
 
@@ -43,6 +69,7 @@ export default function Main() {
         <>
         <div className={style.filters}>
             <div>
+                <input type="text" value={textSearch} placeholder="Pesquise um produto" onChange={(event) => search(event.target.value)}/>
                 <button onClick={orderAz}> Az </button>
                 <button onClick={orderZa}> Za </button>
                 <button onClick={priceCrescent}> Crescent price </button>
