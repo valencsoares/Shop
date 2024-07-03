@@ -5,6 +5,7 @@ import style from "./menu.module.css";
 import Image from "next/image";
 import Spinner from "./Spinner.js"
 import ErrorFetch from "./ErrorFetch";
+import Link from "next/link";
 
 export default function Main() {
     const [listProduct, setListProduct] = useState([]);
@@ -85,6 +86,9 @@ export default function Main() {
                         <Image width={200} height={200} src={prod.image} />
                         <p>US{prod.price}</p>
                         <p className={style.texto}>Description: {prod.description}</p>
+                        <Link href={"/product/" + prod.id}>
+                            <button>Ver mais</button>
+                        </Link>
                         <ul className={style.listaCard}>
                             <li>Category: {prod.category}</li>
                             <li className={style.liRating}>Rating: {prod.rating.count}</li>
