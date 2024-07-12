@@ -85,14 +85,14 @@ export default function Main() {
                         <p> {prod.title} </p>               
                         <Image width={200} height={200} src={prod.image} />
                         <p>US{prod.price}</p>
-                        <p className={style.texto}>Description: {prod.description}</p>
-                        <Link href={"/product/" + prod.id}>
-                            <button>Ver mais</button>
-                        </Link>
+                        <p className={style.texto}>Description: {prod.description}</p> 
                         <ul className={style.listaCard}>
                             <li>Category: {prod.category}</li>
                             <li className={style.liRating}>Rating: {prod.rating.count}</li>
                         </ul>
+                        <Link href={"/product/" + prod.id}>
+                            <button>Ver mais</button>
+                        </Link>
                     </div>)}
             </div>
         </main>
